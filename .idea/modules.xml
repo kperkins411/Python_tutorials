@@ -2,7 +2,15 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../CPP_Homework_Helper/.idea/CPP_Homework_Helper.iml" filepath="$PROJECT_DIR$/../CPP_Homework_Helper/.idea/CPP_Homework_Helper.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/Python_tutorials.iml" filepath="$PROJECT_DIR$/.idea/Python_tutorials.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../demo_command_line_util/.idea/demo_command_line_util.iml" filepath="$PROJECT_DIR$/../demo_command_line_util/.idea/demo_command_line_util.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../neural_style/.idea/neural_style.iml" filepath="$PROJECT_DIR$/../neural_style/.idea/neural_style.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../pascalvoc/.idea/pascalvoc.iml" filepath="$PROJECT_DIR$/../pascalvoc/.idea/pascalvoc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../tensorboard/pytorch-tutorial/.idea/pytorch-tutorial.iml" filepath="$PROJECT_DIR$/../tensorboard/pytorch-tutorial/.idea/pytorch-tutorial.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../tensorboard/.idea/tensorboard.iml" filepath="$PROJECT_DIR$/../tensorboard/.idea/tensorboard.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../video_SSD_object_detection/.idea/video_SSD_object_detection.iml" filepath="$PROJECT_DIR$/../video_SSD_object_detection/.idea/video_SSD_object_detection.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../video_object_recognition/.idea/video_object_recognition.iml" filepath="$PROJECT_DIR$/../video_object_recognition/.idea/video_object_recognition.iml" />
     </modules>
   </component>
 </project>

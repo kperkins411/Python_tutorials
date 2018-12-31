@@ -13,7 +13,6 @@ def getTriangularLRs(*,return_half_step):
     return
 
 
-
 def getTriangularLRs(numb_iterations, max_lr, min_lr, return_half_step=False):
     '''
     returns a single tooth /\ of a sawtooth wave that varies from min_lr to max_lr

@@ -1,3 +1,22 @@
+colors = ["Goldenrod", "purple", "Salmon", "turquoise", "cyan"]
+b= sorted(colors, key=lambda s: s.casefold())
+
+
+colors = ["Goldenrod", "Purple", "Salmon", "Turquoise", "Cyan"]
+
+def normalize_case(string):
+    return string.casefold()
+
+normalized_colors = list(map(normalize_case, colors))
+
+
+def myfunc(n):
+  return lambda a : a * n
+
+mydoubler = myfunc(2)
+
+print(mydoubler(11))
+
 d1 = {"red": 1, "blue": 2}
 d2 = {"green": 3, "blue": 17, "orange": 4}
 
