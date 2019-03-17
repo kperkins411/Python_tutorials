@@ -30,8 +30,8 @@ l2 = sum(l1)/len(l1)
 
 df3 = pd.DataFrame(np.arange(20).reshape(10,2),columns=list('AB'))
 
-for val in df3['B']:
-    val = df3[]
+# for val in df3['B']:
+#     val = df3[]
 
 df4 = df3.rolling(window=3,min_periods=3)
 df4 = df3.rolling(window=3,min_periods=3).mean()

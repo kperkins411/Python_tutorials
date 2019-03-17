@@ -63,7 +63,7 @@ class DisplayLR(object):
         self.print()
 
     def print(self, mult=1):
-        lrs = self.LR.getLRs(numb_iterations*mult,max_lr, min_lr)
+        lrs = self.LR.getVals(numb_iterations * mult, max_lr, min_lr)
         plt.plot(lrs)
         plt.show()
 

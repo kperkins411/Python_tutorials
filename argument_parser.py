@@ -1,12 +1,14 @@
 import argparse
 import sys
+# def check_args1():
+#     parser = argparse.ArgumentParser()
+#     parser.parse_args()
 
 def check_arg(args=None):
     parser = argparse.ArgumentParser(description='Script to learn basic argparse')
     parser.add_argument('-H', '--host',
                         help='host ip',
-                        required='True',
-                        default='localhost')
+                        required='True')
     parser.add_argument('-p', '--port',
                         help='port of the web server',
                         default='8080')
