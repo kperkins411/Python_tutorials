@@ -4,5 +4,11 @@
     <content url="file://$MODULE_DIR$" />
     <orderEntry type="jdk" jdkName="Python 3.6.4 (~/anaconda2/envs/fastai/bin/python3.6)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="hyperparam_helper" />
+    <orderEntry type="module" module-name="linear_regression" />
+    <orderEntry type="module" module-name="backpropegation" />
+    <orderEntry type="module" module-name="dashboard" />
+    <orderEntry type="module" module-name="ee_performence_cpp" />
+    <orderEntry type="module" module-name="PyTorch_tutorial" />
   </component>
 </module>

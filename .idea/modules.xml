@@ -3,8 +3,14 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/../CPP_Homework_Helper/.idea/CPP_Homework_Helper.iml" filepath="$PROJECT_DIR$/../CPP_Homework_Helper/.idea/CPP_Homework_Helper.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../PyTorch_tutorial/.idea/PyTorch_tutorial.iml" filepath="$PROJECT_DIR$/../PyTorch_tutorial/.idea/PyTorch_tutorial.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/Python_tutorials.iml" filepath="$PROJECT_DIR$/.idea/Python_tutorials.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../backpropegation/.idea/backpropegation.iml" filepath="$PROJECT_DIR$/../backpropegation/.idea/backpropegation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../dashboard/.idea/dashboard.iml" filepath="$PROJECT_DIR$/../dashboard/.idea/dashboard.iml" />
       <module fileurl="file://$PROJECT_DIR$/../demo_command_line_util/.idea/demo_command_line_util.iml" filepath="$PROJECT_DIR$/../demo_command_line_util/.idea/demo_command_line_util.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../ee_performence_cpp/.idea/ee_performence_cpp.iml" filepath="$PROJECT_DIR$/../ee_performence_cpp/.idea/ee_performence_cpp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../hyperparam_helper/.idea/hyperparam_helper.iml" filepath="$PROJECT_DIR$/../hyperparam_helper/.idea/hyperparam_helper.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../linear_regression/.idea/linear_regression.iml" filepath="$PROJECT_DIR$/../linear_regression/.idea/linear_regression.iml" />
       <module fileurl="file://$PROJECT_DIR$/../neural_style/.idea/neural_style.iml" filepath="$PROJECT_DIR$/../neural_style/.idea/neural_style.iml" />
       <module fileurl="file://$PROJECT_DIR$/../pascalvoc/.idea/pascalvoc.iml" filepath="$PROJECT_DIR$/../pascalvoc/.idea/pascalvoc.iml" />
       <module fileurl="file://$PROJECT_DIR$/../tensorboard/pytorch-tutorial/.idea/pytorch-tutorial.iml" filepath="$PROJECT_DIR$/../tensorboard/pytorch-tutorial/.idea/pytorch-tutorial.iml" />

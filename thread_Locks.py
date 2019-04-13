@@ -58,10 +58,6 @@ starttime = timeit.default_timer()
 run_threads(worker,numb_threads,how_many_increments,counter)
 tme  = (timeit.default_timer()-starttime)
 print("time to run withOUT locks:%1.3f" %tme )
-
-# print("time to run:" +str(tme))
-
-
 print('Counter value should be %d ifound %d'% (how_many_increments*numb_threads,counter.count))
 
 
