@@ -1,3 +1,21 @@
+import numpy as np
+import timeit
+import itertools
+
+list_a = [1, 2, 4, 6]*10000
+fil = [True, False, True, False]*10000
+list_a_np = np.array(list_a)
+fil_np = np.array(fil)
+
+lst=list_a_np[fil_np]
+
+nmb=1000
+tme = timeit.timeit( 'list(itertools.compress([1, 2, 4, 6]*10000, [True, False, True, False]*10000))', number=nmb)
+print (tme/1000)
+
+# tme = timeit.timeit( 'import numpy; itertools.compress(numpy.tile(numpy.array([1, 2, 4, 6]),1000), numpy.tile(numpy.array([True, False, True, False]),1000)))', number=nmb)
+print (tme/1000)
+
 colors = ["Goldenrod", "purple", "Salmon", "turquoise", "cyan"]
 b= sorted(colors, key=lambda s: s.casefold())
 
@@ -15,6 +33,7 @@ def myfunc(n):
 
 mydoubler = myfunc(2)
 
+print(myfunc(2)(11))
 print(mydoubler(11))
 
 d1 = {"red": 1, "blue": 2}
@@ -32,6 +51,9 @@ xx=[1,2,3,4,5,-6,7,-8]
 # xxx = xx.reshape(2,2,2)
 yy=list(filter(lambda x: x if x%2==0 else None,xx))
 y=list(filter(lambda x: (x%2==0), xx))
-zz= list(map(lambda x:0 if x<0 else x))
+zz= list(map(lambda x:0 if x<0 else x,xx))
+
+z1= list(map(lambda x: x<0,xx))
+z2=xx[z1]
 print (y)
 pass

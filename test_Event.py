@@ -1,4 +1,4 @@
-from threading import Thread,Lock
+from threading import Thread,Lock,Condition
 from time import sleep
 from threading import Event
 
@@ -19,6 +19,8 @@ class Counter(object):
 
 class Worker(Thread):
     global bDoWork
+    global cv
+
     def __init__(self,func, args):
         super().__init__()
         self.func=func
@@ -40,6 +42,7 @@ class Worker(Thread):
 event1 = Event()
 event2 = Event()
 cnt = Counter()
+cv = Condition()
 
 
 # Example 1
@@ -47,47 +50,53 @@ def consume(id, evt,lck):
     print('enter thread %s consume' % (id))
     global cnt
     global bDoWork
+    global cv
 
     while (True):
 
-        if cnt.count == 0 and iNumbProducers == 0:
-            break
-        elif cnt.count == 0:
-            evt.clear()
-            evt.wait()
-        else:
-            cnt.inc(-1)
-            print('thread %s consumeing, cnt is %d' % (id,cnt.count ))
+        with cv:
+            if cnt.count == 0 and iNumbProducers == 0:
+                break
+            elif cnt.count == 0:
+                cv.wait()
+            else:
+                cnt.inc(-1)
+                print('thread %s consumeing, cnt is %d' % (id,cnt.count ))
             # cnt.count  =cnt.count - 1
             # with lck:
             #     cnt-=1
 
-        # print('thread %s consume' % (id))
-    print('thread %s consume, EXITING' % (id))
+    with cv:
+        print('thread %s consume, EXITING' % (id))
     return
 
-total_incs=1000
+total_incs=100000
 iNumbProducers = 6
 lck = Lock()
 def produce(id, evt,lck):
     print('enter thread %s produce' % (id))
     global cnt
     global iNumbProducers
+    global cv
+
     cntdown = total_incs
     while (cntdown > 0):
-        cnt.inc(1)
+        with cv:
+            cnt.inc(1)
 
-        # cnt.count =cnt.count + 1
-        # with lck:
-        #     cnt+=1;
-        if (cntdown%20==0):
-            print("         cnt is %d"%cnt.count)
-
-        evt.set()
-        cntdown-=1;
+            # cnt.count =cnt.count + 1
+            # with lck:
+            #     cnt+=1;
+            if (cntdown%20==0):
+                print("         cnt is %d"%cnt.count)
+            cntdown-=1;
+            cv.notifyAll()
         # print('thread %s produce' % (id))
-    print('thread %s produce, EXITING' % (id))
-    iNumbProducers-=1
+
+    with cv:
+        print('thread %s produce, EXITING' % (id))
+        iNumbProducers-=1
+        cv.notifyAll()
     return
 
 threads = [ Worker(consume,args =dict(id=1,evt=event1,lck =lck)),

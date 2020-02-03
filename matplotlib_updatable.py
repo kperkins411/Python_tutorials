@@ -15,5 +15,5 @@ for i in range(10):
     plt.scatter(i, y)
     plt.pause(0.25)
 
-while True:
-    plt.pause(0.05)
+# while True:
+#     plt.pause(0.05)

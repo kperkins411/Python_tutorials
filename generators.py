@@ -7,3 +7,4 @@ def countdown(num):
 val = countdown(5)
 print(val)
 print(next(val))
+print(list(val))

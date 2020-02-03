@@ -1,5 +1,7 @@
 import datetime
 
+b=list(range(6))
+
 class Logger(object):
     def log(self, message):
         print (message)
