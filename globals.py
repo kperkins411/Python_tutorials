@@ -1,4 +1,55 @@
 import IPython
+c = 0 # global variable
+
+def add():
+    global c
+    c = c + 2 # increment by 2
+    print("Inside add():", c)
+
+add()
+print("In main:", c)
+
+x = 5
+
+def outer():
+    global x
+    x = "local"
+
+    def inner():
+        global x
+        x = "nonlocal"
+        print("inner:", x)
+
+    inner()
+    print("outer:", x)
+
+
+outer()
+print("global x:", x)
+
+def foo():
+    x = 10
+    print("local x:", x)
+
+foo()
+print("global x:", x)
+
+
+def foo():
+    x = 20
+
+    def bar():
+        global x
+        x = 25
+
+    print("Before calling bar: ", x)
+    print("Calling bar now")
+    bar()
+    print("After calling bar: ", x)
+
+
+foo()
+print("x in main : ", x)
 
 # print system information (but not packages)
 print(IPython.sys_info())

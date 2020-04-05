@@ -15,6 +15,10 @@ df = pd.DataFrame(raw_data, columns = ['first_name', 'last_name', 'age', 'preTes
 df2 = pd.DataFrame(raw_data, columns = raw_data.keys())
 print (df)
 
+idxs= df['last_name'] == '.'
+df.loc[idxs,'last_name']="UNKNOWN"
+
+
 
 url="https://tinyurl.com/titanic-csv"
 df3=pd.read_csv(url)
