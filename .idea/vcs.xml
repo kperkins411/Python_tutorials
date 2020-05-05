@@ -2,6 +2,7 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../BlackBoard_zip_extractor" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../PyTorch_tutorial" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../tensorboard/pytorch-tutorial" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../video_SSD_object_detection" vcs="Git" />

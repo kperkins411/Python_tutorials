@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../BlackBoard_zip_extractor/.idea/BlackBoard_zip_extractor.iml" filepath="$PROJECT_DIR$/../BlackBoard_zip_extractor/.idea/BlackBoard_zip_extractor.iml" />
       <module fileurl="file://$PROJECT_DIR$/../CPP_Homework_Helper/.idea/CPP_Homework_Helper.iml" filepath="$PROJECT_DIR$/../CPP_Homework_Helper/.idea/CPP_Homework_Helper.iml" />
       <module fileurl="file://$PROJECT_DIR$/../PyTorch_tutorial/.idea/PyTorch_tutorial.iml" filepath="$PROJECT_DIR$/../PyTorch_tutorial/.idea/PyTorch_tutorial.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/Python_tutorials.iml" filepath="$PROJECT_DIR$/.idea/Python_tutorials.iml" />

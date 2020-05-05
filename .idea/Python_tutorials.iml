@@ -10,5 +10,6 @@
     <orderEntry type="module" module-name="dashboard" />
     <orderEntry type="module" module-name="ee_performence_cpp" />
     <orderEntry type="module" module-name="PyTorch_tutorial" />
+    <orderEntry type="module" module-name="BlackBoard_zip_extractor" />
   </component>
 </module>
