@@ -3,6 +3,8 @@ Minimal character-level Vanilla RNN model. Written by Andrej Karpathy (@karpathy
 BSD License
 """
 import numpy as np
+from os import path
+import pickle
 
 # data I/O
 data = open('derby.txt', 'r').read()  # should be simple plain text file
@@ -17,13 +19,21 @@ hidden_size = 100  # size of hidden layer of neurons
 seq_length = 25  # number of steps to unroll the RNN for
 learning_rate = 1e-1
 
-# model parameters
-Wxh = np.random.randn(hidden_size, vocab_size) * 0.01  # input to hidden
-Whh = np.random.randn(hidden_size, hidden_size) * 0.01  # hidden to hidden
-Why = np.random.randn(vocab_size, hidden_size) * 0.01  # hidden to output
-bh = np.zeros((hidden_size, 1))  # hidden bias
-by = np.zeros((vocab_size, 1))  # output bias
 
+def read_or_new_pickle(path):
+    try:
+        with open(path, "rb") as f:
+            Wxh, Whh, Why, bh, by = pickle.load(open(W_FILE, 'rb'))
+    except Exception:
+        Wxh = np.random.randn(hidden_size, vocab_size) * 0.01  # input to hidden
+        Whh = np.random.randn(hidden_size, hidden_size) * 0.01  # hidden to hidden
+        Why = np.random.randn(vocab_size, hidden_size) * 0.01  # hidden to output
+        bh = np.zeros((hidden_size, 1))  # hidden bias
+        by = np.zeros((vocab_size, 1))  # output bias
+    return Wxh, Whh, Why, bh, by
+#load old params if possible, otherwise initialize
+W_FILE= "rnn_tst_weights"
+Wxh, Whh, Why, bh, by = read_or_new_pickle(W_FILE)
 
 def lossFun(inputs, targets, hprev):
     """
@@ -86,6 +96,8 @@ n, p = 0, 0
 mWxh, mWhh, mWhy = np.zeros_like(Wxh), np.zeros_like(Whh), np.zeros_like(Why)
 mbh, mby = np.zeros_like(bh), np.zeros_like(by)  # memory variables for Adagrad
 smooth_loss = -np.log(1.0 / vocab_size) * seq_length  # loss at iteration 0
+
+
 while True:
     # prepare inputs (we're sweeping from left to right in steps seq_length long)
     if p + seq_length + 1 >= len(data) or n == 0:
@@ -114,3 +126,8 @@ while True:
 
     p += seq_length  # move data pointer
     n += 1  # iteration counter
+
+    #save weights every little while
+    if n%1000==0:
+        with open(W_FILE, 'wb') as f:
+            pickle.dump((Wxh, Whh, Why, bh, by), f)
